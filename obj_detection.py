@@ -6,9 +6,9 @@ import time
 
 # %%
 def load_yolo():
-    net = cv2.dnn.readNet("/Users/amritesh/Downloads/OpenCV/main/yolov3.weights", "/Users/amritesh/Downloads/OpenCV/main/yolov3.cfg")
+    net = cv2.dnn.readNet("./yolov3.weights", "./yolov3.cfg")
     classes = []
-    with open("/Users/amritesh/Downloads/OpenCV/main/coco.names", 'r') as f:
+    with open("./coco.names", 'r') as f:
         classes = [line.strip() for line in f.readlines()]
         #print(classes)
     layers_name = net.getLayerNames()
@@ -105,7 +105,7 @@ def start_video(video_path):
 			break
 	cap.release()
 # %%
-start_video("/Users/amritesh/Downloads/OpenCV/new1.mp4")
+start_video("./new1.mp4")
 
 
 # %%
